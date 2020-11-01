@@ -86,3 +86,28 @@ function showScore() {
     finalScoreEl.innerHTML = "You got " + score +" out of " + quizQuestions.length;
 }
 
+function clearScore() {
+    window.localStorage.clear();
+    highScoreDisplayName.textContent = "";
+    highScoreDisplayScore.textContent = "";
+}
+
+function replayQuiz() {
+    highScoreContainer.style.display = "none";
+    gameOverEl.style.display = "none";
+    startQuizEl.style.display = "none";
+    timeLeft = 76;
+    score = 0;
+    currentQuestions = 0;
+}
+
+function checkAnswer(answer) {
+    if (answer === correct){
+        alert("That is correct!");
+        currentQuestions++;
+        generateQuizQuestions();
+    } else {
+        showScore();
+    }
+}
+
