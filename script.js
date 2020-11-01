@@ -5,7 +5,7 @@ var gameOverEl = document.getElementById("gameOver");
 var questionsEl = document.getElementById("questions");
 var quizTimerEl = document.getElementById("timer");
 var startQuizBtn = document.getElementById("startBtn");
-var startQuiz = document.getElementById("startPage");
+var startQuizEl = document.getElementById("startPage");
 var highScoreContainer = document.getElementById("highScoreContainer");
 var highScoreInputName = document.getElementById("initials");
 var highScoreDisplayName = document.getElementById("highScoreIntls");
@@ -26,17 +26,17 @@ var quizQuestions = [
         question: "How do we create a single line comment on Javascript?",
         answers: ["/* */", "// //", "{}", "<!-- -->"],
         answer: "// //"
-    }
+    },
     {
         question: "How do you create a new file using your console's terminal?",
         answers: ["touch", "code .", "create", "new"],
         answer: "touch"
-    }
+    },
     {
         question: "In HTML, what tag is used to make your text into an emphasized (italics) version?",
         answers: ["br", "strong", "em", "bold"],
         answer: "em"
-    }
+    },
     {
         question: "How do we create a single line comment on Javascript?",
         answers: ["Javascript", "terminal bash", "for loops", "console log"],
@@ -54,12 +54,35 @@ function generateQuizQuestions() {
     gameOverEl.style.display = "none";
     if (currentQuestions === finalQuestions) {
         return showScore();
-        
+    }    
     var finalQuestions = quizQuestions[currentQuestions];
     questionsEl.innerHTML = "<p>" + currentQuestions.question + "</p>";
     buttonA.innerHTML = currentQuestions.buttonA
     buttonB.innerHTML = currentQuestions.buttonB
     buttonC.innerHTML = currentQuestions.buttonC
     buttonD.innerHTML = currentQuestions.buttonD
-    }
+    
 };
+
+function startQuiz() {
+    gameOverEl.style.display = "none";
+    startQuizEl.style.display = "none";
+    generateQuizQuestions(); 
+    timeInterval = setInterval(function(){
+        timeLeft--;
+        quizTimerEl.textContent = "time left " + timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+            showScore();
+        } 
+    })
+}
+
+function showScore() {
+    quizBodyEl.style.display = "none";
+    gameOverEl.style.display = "none";
+    clearInterval(timeInterval);
+    highScoreInputName.value = "";
+    finalScoreEl.innerHTML = "You got " + score +" out of " + quizQuestions.length;
+}
+
