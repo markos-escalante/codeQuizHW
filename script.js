@@ -111,3 +111,5 @@ function checkAnswer(answer) {
     }
 }
 
+startQuizBtn.addEventListener("click", startQuiz);
+

@@ -1,0 +1,36 @@
+p{  
+    color: black;
+    text-align: center;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+}
+
+input{
+    text-align: center;
+}
+
+.container {
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+button {
+    background-color: red;
+    border-radius: 10px;
+    border: 2px;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 3px;
+
+}
+
