@@ -44,3 +44,22 @@ var quizQuestions = [
     }
 ];
 
+var finalQuestions = quizQuestions.length;
+var currentQuestions = 0;
+var timeLeft = 70;
+var timeInterval;
+var score = 0;
+
+function generateQuizQuestions() {
+    gameOverEl.style.display = "none";
+    if (currentQuestions === finalQuestions) {
+        return showScore();
+        
+    var finalQuestions = quizQuestions[currentQuestions];
+    questionsEl.innerHTML = "<p>" + currentQuestions.question + "</p>";
+    buttonA.innerHTML = currentQuestions.buttonA
+    buttonB.innerHTML = currentQuestions.buttonB
+    buttonC.innerHTML = currentQuestions.buttonC
+    buttonD.innerHTML = currentQuestions.buttonD
+    }
+};
