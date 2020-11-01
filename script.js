@@ -17,3 +17,30 @@ var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 
+var quizQuestions = [
+    {   question: "What will console.log(hello!.length); print?:",
+        answers: ["hello!", "5", "undefined", "6"],
+        answer:  "6"
+    },
+    {
+        question: "How do we create a single line comment on Javascript?",
+        answers: ["/* */", "// //", "{}", "<!-- -->"],
+        answer: "// //"
+    }
+    {
+        question: "How do you create a new file using your console's terminal?",
+        answers: ["touch", "code .", "create", "new"],
+        answer: "touch"
+    }
+    {
+        question: "In HTML, what tag is used to make your text into an emphasized (italics) version?",
+        answers: ["br", "strong", "em", "bold"],
+        answer: "em"
+    }
+    {
+        question: "How do we create a single line comment on Javascript?",
+        answers: ["Javascript", "terminal bash", "for loops", "console log"],
+        answer: "console log"
+    }
+];
+
